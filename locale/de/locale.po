@@ -1,0 +1,32 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-17\n"
+"PO-Revision-Date: 2026-07-17\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "plugins.block.accessibility.displayName"
+msgstr "Barrierefreiheit-Block (Zoom & Kontrast)"
+
+msgid "plugins.block.accessibility.description"
+msgstr "Fügt einen Seitenleisten-Block mit Steuerelementen zum Vergrößern, Verkleinern und für hohen Kontrast für Leserinnen und Leser hinzu."
+
+msgid "plugins.block.accessibility.title"
+msgstr "Barrierefreiheit"
+
+msgid "plugins.block.accessibility.zoomIn"
+msgstr "Textgröße vergrößern"
+
+msgid "plugins.block.accessibility.zoomOut"
+msgstr "Textgröße verkleinern"
+
+msgid "plugins.block.accessibility.contrast"
+msgstr "Hohen Kontrast umschalten"
+
+msgid "plugins.block.accessibility.reset"
+msgstr "Barrierefreiheit-Einstellungen zurücksetzen"
