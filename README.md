@@ -1,24 +1,24 @@
 # Accessibility Block (Zoom & Contrast) — OJS plugin
 
 [![OJS](https://img.shields.io/badge/OJS-3.3%20%7C%203.4%20%7C%203.5-brightgreen)](https://pkp.sfu.ca/ojs/)
-[![Version](https://img.shields.io/badge/version-1.0.0.0-blue)](version.xml)
+[![Version](https://img.shields.io/badge/version-1.0.1.0-blue)](version.xml)
 [![License](https://img.shields.io/badge/license-GPL--3.0-lightgrey)](LICENSE)
 
-**⬇️ Install package:** [OJS 3.5](https://github.com/OJSBR/accessibility/releases/download/1.0.0.0/accessibility-1.0.0.0.tar.gz) · [OJS 3.4](https://github.com/OJSBR/accessibility/releases/download/1.0.0.0-ojs3.4/accessibility-1.0.0.0-ojs3.4.tar.gz) · [OJS 3.3](https://github.com/OJSBR/accessibility/releases/download/1.0.0.0-ojs3.3/accessibility-1.0.0.0-ojs3.3.tar.gz) — or browse all [Releases](../../releases).
+**⬇️ Install package:** [OJS 3.5](https://github.com/OJSBR/accessibility/releases/download/1.0.1.0/accessibility-1.0.1.0.tar.gz) · [OJS 3.4](https://github.com/OJSBR/accessibility/releases/download/1.0.0.0-ojs3.4/accessibility-1.0.0.0-ojs3.4.tar.gz) · [OJS 3.3](https://github.com/OJSBR/accessibility/releases/download/1.0.0.0-ojs3.3/accessibility-1.0.0.0-ojs3.3.tar.gz) — or browse all [Releases](../../releases).
 
 A **block plugin** for **Open Journal Systems (OJS)** that adds a sidebar widget with
 **reader accessibility controls**: **zoom in (A+)**, **zoom out (A−)**, a **high-contrast**
 toggle and a **reset** button — no core patching, no external dependencies, and preferences
 that **persist across pages**.
 
-> **Developed and maintained by [OJSBR](https://ojsbr.com.br).** See the
+> **Developed and maintained by [OJSBR](https://ojsbr.com).** See the
 > [Credits & authorship](#credits--authorship) section below.
 
 ## Compatibility & branches
 
 | OJS version | Branch | Plugin release |
 |-------------|--------|----------------|
-| OJS 3.5.x   | [`stable-3_5_0`](../../tree/stable-3_5_0) *(default)* | 1.0.0.0 |
+| OJS 3.5.x   | [`stable-3_5_0`](../../tree/stable-3_5_0) *(default)* | 1.0.1.0 |
 | OJS 3.4.x   | [`stable-3_4_0`](../../tree/stable-3_4_0) | 1.0.0.0-ojs3.4 |
 | OJS 3.3.x   | [`stable-3_3_0`](../../tree/stable-3_3_0) | 1.0.0.0-ojs3.3 |
 
@@ -62,9 +62,16 @@ that **persist across pages**.
 - No core files are touched and no database schema is added, so it is fully
   upgrade-compatible; disabling the plugin removes the block entirely.
 
+## Tests
+
+A functional [Cypress](https://www.cypress.io/) test lives in
+`cypress/tests/functional/AccessibilityBlock.cy.js`. It enables the plugin, places the block
+in the sidebar and exercises the controls end to end (zoom in, high contrast, persistence
+across pages and reset), following the same conventions as the plugins shipped with OJS.
+
 ## Credits & authorship
 
-- **Developed and maintained by** [OJSBR](https://ojsbr.com.br) — original plugin.
+- **Developed and maintained by** [OJSBR](https://ojsbr.com) — original plugin.
 - Distributed under the **GNU GPL v3**.
 
 ## Contributing
@@ -85,14 +92,14 @@ Um **plugin de bloco** para o **Open Journal Systems (OJS)** que adiciona, na ba
 alternar **alto contraste** e um botão de **redefinir** — sem alterar o núcleo, sem
 dependências externas, e com as preferências **persistindo entre as páginas**.
 
-> **Desenvolvido e mantido pela [OJSBR](https://ojsbr.com.br).** Veja a seção
+> **Desenvolvido e mantido pela [OJSBR](https://ojsbr.com).** Veja a seção
 > [Créditos e autoria](#créditos-e-autoria) abaixo.
 
 ### Compatibilidade e branches
 
 | Versão do OJS | Branch | Release do plugin |
 |---------------|--------|-------------------|
-| OJS 3.5.x     | `stable-3_5_0` *(padrão)* | 1.0.0.0 |
+| OJS 3.5.x     | `stable-3_5_0` *(padrão)* | 1.0.1.0 |
 | OJS 3.4.x     | `stable-3_4_0` | 1.0.0.0-ojs3.4 |
 | OJS 3.3.x     | `stable-3_3_0` | 1.0.0.0-ojs3.3 |
 
@@ -135,9 +142,17 @@ bom lugar para os controles de acessibilidade).
 - Nenhum arquivo do núcleo é alterado e nenhum schema de banco é adicionado — é totalmente
   compatível com upgrades; desativar o plugin remove o bloco por completo.
 
+### Testes
+
+Um teste funcional [Cypress](https://www.cypress.io/) fica em
+`cypress/tests/functional/AccessibilityBlock.cy.js`. Ele habilita o plugin, posiciona o bloco
+na barra lateral e exercita os controles de ponta a ponta (aumentar zoom, alto contraste,
+persistência entre páginas e redefinir), seguindo as mesmas convenções dos plugins que
+acompanham o OJS.
+
 ### Créditos e autoria
 
-- **Desenvolvido e mantido pela** [OJSBR](https://ojsbr.com.br) — plugin autoral.
+- **Desenvolvido e mantido pela** [OJSBR](https://ojsbr.com) — plugin autoral.
 - Distribuído sob a **GNU GPL v3**.
 
 ### Licença

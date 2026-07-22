@@ -1,7 +1,7 @@
 {**
  * plugins/blocks/accessibility/templates/block.tpl
  *
- * Copyright (c) 2026 OJSBR (https://ojsbr.com.br)
+ * Copyright (c) 2026 OJSBR (https://ojsbr.com)
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * Accessibility sidebar block: zoom in / zoom out / high contrast / reset.
