@@ -1,0 +1,32 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_PT\n"
+
+
+msgid "plugins.block.accessibility.displayName"
+msgstr "Bloco de Acessibilidade (Zoom e Contraste)"
+
+msgid "plugins.block.accessibility.description"
+msgstr "Adiciona um bloco na barra lateral com controlos para aumentar o zoom, diminuir o zoom e ativar o alto contraste, ao dispor dos leitores."
+
+msgid "plugins.block.accessibility.title"
+msgstr "Acessibilidade"
+
+msgid "plugins.block.accessibility.zoomIn"
+msgstr "Aumentar o tamanho do texto"
+
+msgid "plugins.block.accessibility.zoomOut"
+msgstr "Diminuir o tamanho do texto"
+
+msgid "plugins.block.accessibility.contrast"
+msgstr "Alternar o alto contraste"
+
+msgid "plugins.block.accessibility.reset"
+msgstr "Repor as configurações de acessibilidade"
