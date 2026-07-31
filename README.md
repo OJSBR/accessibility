@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/badge/version-1.0.1.0-blue)](version.xml)
 [![License](https://img.shields.io/badge/license-GPL--3.0-lightgrey)](LICENSE)
 
-**⬇️ Install package:** [OJS 3.5](https://github.com/OJSBR/accessibility/releases/download/1.0.1.0/accessibility-1.0.1.0.tar.gz) · [OJS 3.4](https://github.com/OJSBR/accessibility/releases/download/1.0.0.0-ojs3.4/accessibility-1.0.0.0-ojs3.4.tar.gz) · [OJS 3.3](https://github.com/OJSBR/accessibility/releases/download/1.0.0.0-ojs3.3/accessibility-1.0.0.0-ojs3.3.tar.gz) — or browse all [Releases](../../releases).
+**⬇️ Install package:** [OJS 3.5](https://github.com/OJSBR/accessibility/releases/download/1.0.1.1/accessibility-1.0.1.1.tar.gz) · [OJS 3.4](https://github.com/OJSBR/accessibility/releases/download/1.0.0.1-ojs3.4/accessibility-1.0.0.1-ojs3.4.tar.gz) · [OJS 3.3](https://github.com/OJSBR/accessibility/releases/download/1.0.0.1-ojs3.3/accessibility-1.0.0.1-ojs3.3.tar.gz) — or browse all [Releases](../../releases).
 
 A **block plugin** for **Open Journal Systems (OJS)** that adds a sidebar widget with
 **reader accessibility controls**: **zoom in (A+)**, **zoom out (A−)**, a **high-contrast**
