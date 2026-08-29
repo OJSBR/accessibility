@@ -9,26 +9,26 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
+"Language: fr\n"
 
 
 msgid "plugins.block.accessibility.displayName"
-msgstr "Bloque de Accesibilidad (Zoom y Contraste)"
+msgstr "Bloc d'accessibilité (zoom et contraste)"
 
 msgid "plugins.block.accessibility.description"
-msgstr "Añade un bloque en la barra lateral con controles para aumentar zoom, reducir zoom y alto contraste para los lectores."
+msgstr "Ajoute un bloc dans la barre latérale avec des commandes pour agrandir, réduire le zoom et activer le contraste élevé pour les lecteurs."
 
 msgid "plugins.block.accessibility.title"
-msgstr "Accesibilidad"
+msgstr "Accessibilité"
 
 msgid "plugins.block.accessibility.zoomIn"
-msgstr "Aumentar el tamaño del texto"
+msgstr "Augmenter la taille du texte"
 
 msgid "plugins.block.accessibility.zoomOut"
-msgstr "Reducir el tamaño del texto"
+msgstr "Réduire la taille du texte"
 
 msgid "plugins.block.accessibility.contrast"
-msgstr "Alternar alto contraste"
+msgstr "Activer/désactiver le contraste élevé"
 
 msgid "plugins.block.accessibility.reset"
-msgstr "Restablecer la configuración de accesibilidad"
+msgstr "Réinitialiser les paramètres d'accessibilité"

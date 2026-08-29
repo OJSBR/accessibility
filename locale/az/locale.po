@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: az\n"
+
+
+#, fuzzy
+msgid "plugins.block.accessibility.displayName"
+msgstr "Əlçatanlıq bloku (böyütmə və kontrast)"
+
+#, fuzzy
+msgid "plugins.block.accessibility.description"
+msgstr "Yan panelə oxucular üçün böyütmə, kiçiltmə və yüksək kontrast idarəetmələri olan blok əlavə edir."
+
+#, fuzzy
+msgid "plugins.block.accessibility.title"
+msgstr "Əlçatanlıq"
+
+#, fuzzy
+msgid "plugins.block.accessibility.zoomIn"
+msgstr "Mətn ölçüsünü böyüt"
+
+#, fuzzy
+msgid "plugins.block.accessibility.zoomOut"
+msgstr "Mətn ölçüsünü kiçilt"
+
+#, fuzzy
+msgid "plugins.block.accessibility.contrast"
+msgstr "Yüksək kontrastı aç/bağla"
+
+#, fuzzy
+msgid "plugins.block.accessibility.reset"
+msgstr "Əlçatanlıq parametrlərini sıfırla"

@@ -1,20 +1,18 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-17\n"
-"PO-Revision-Date: 2026-07-17\n"
-"Last-Translator: OJSBR\n"
-"Language-Team: OJSBR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: fr_CA\n"
+
 
 msgid "plugins.block.accessibility.displayName"
 msgstr "Bloc d'accessibilité (zoom et contraste)"
 
 msgid "plugins.block.accessibility.description"
-msgstr "Ajoute un bloc dans la barre latérale avec des commandes pour agrandir, réduire le zoom et activer le contraste élevé pour les lecteurs."
+msgstr "Ajoute dans la barre latérale un bloc avec des commandes d'agrandissement, de réduction et de contraste élevé pour les lecteurs."
 
 msgid "plugins.block.accessibility.title"
 msgstr "Accessibilité"
@@ -29,4 +27,4 @@ msgid "plugins.block.accessibility.contrast"
 msgstr "Activer/désactiver le contraste élevé"
 
 msgid "plugins.block.accessibility.reset"
-msgstr "Réinitialiser les paramètres d'accessibilité"
+msgstr "Réinitialiser les réglages d'accessibilité"

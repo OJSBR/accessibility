@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: zh_Hans\n"
+
+
+#, fuzzy
+msgid "plugins.block.accessibility.displayName"
+msgstr "无障碍区块（缩放与对比度）"
+
+#, fuzzy
+msgid "plugins.block.accessibility.description"
+msgstr "在侧边栏添加一个区块，为读者提供放大、缩小和高对比度控件。"
+
+#, fuzzy
+msgid "plugins.block.accessibility.title"
+msgstr "无障碍"
+
+#, fuzzy
+msgid "plugins.block.accessibility.zoomIn"
+msgstr "放大字号"
+
+#, fuzzy
+msgid "plugins.block.accessibility.zoomOut"
+msgstr "缩小字号"
+
+#, fuzzy
+msgid "plugins.block.accessibility.contrast"
+msgstr "切换高对比度"
+
+#, fuzzy
+msgid "plugins.block.accessibility.reset"
+msgstr "重置无障碍设置"

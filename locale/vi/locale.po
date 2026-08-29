@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: vi\n"
+
+
+#, fuzzy
+msgid "plugins.block.accessibility.displayName"
+msgstr "Khối trợ năng (thu phóng & tương phản)"
+
+#, fuzzy
+msgid "plugins.block.accessibility.description"
+msgstr "Thêm một khối ở thanh bên với các nút phóng to, thu nhỏ và tương phản cao cho độc giả."
+
+#, fuzzy
+msgid "plugins.block.accessibility.title"
+msgstr "Trợ năng"
+
+#, fuzzy
+msgid "plugins.block.accessibility.zoomIn"
+msgstr "Tăng cỡ chữ"
+
+#, fuzzy
+msgid "plugins.block.accessibility.zoomOut"
+msgstr "Giảm cỡ chữ"
+
+#, fuzzy
+msgid "plugins.block.accessibility.contrast"
+msgstr "Bật/tắt tương phản cao"
+
+#, fuzzy
+msgid "plugins.block.accessibility.reset"
+msgstr "Đặt lại thiết lập trợ năng"

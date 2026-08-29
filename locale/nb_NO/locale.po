@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: nb_NO\n"
+
+
+#, fuzzy
+msgid "plugins.block.accessibility.displayName"
+msgstr "Tilgjengelighetsblokk (zoom og kontrast)"
+
+#, fuzzy
+msgid "plugins.block.accessibility.description"
+msgstr "Legger til en blokk i sidefeltet med knapper for å zoome inn, zoome ut og slå på høy kontrast for leserne."
+
+#, fuzzy
+msgid "plugins.block.accessibility.title"
+msgstr "Tilgjengelighet"
+
+#, fuzzy
+msgid "plugins.block.accessibility.zoomIn"
+msgstr "Øk tekststørrelsen"
+
+#, fuzzy
+msgid "plugins.block.accessibility.zoomOut"
+msgstr "Reduser tekststørrelsen"
+
+#, fuzzy
+msgid "plugins.block.accessibility.contrast"
+msgstr "Slå høy kontrast på/av"
+
+#, fuzzy
+msgid "plugins.block.accessibility.reset"
+msgstr "Tilbakestill tilgjengelighetsinnstillinger"
