@@ -55,7 +55,7 @@ describe('Accessibility block plugin', function() {
 		});
 		// OJS 3.3 answers the sign-in with a domain cookie and a host-only deletion, which the
 		// Cypress cookie jar can resolve the wrong way: fall back to the form when that happens.
-		cy.visit(url('management/settings/website') + '?reload=' + Date.now());
+		cy.visit(url('submissions') + '?reload=' + Date.now());
 		cy.get('body').then(($body) => {
 			if ($body.find('form#login').length) {
 				cy.get('form#login input[name="username"]').type(adminUser, {delay: 0});
@@ -80,8 +80,9 @@ describe('Accessibility block plugin', function() {
 	));
 
 	// The journal as the REST API sees it, with the CSRF token of the session.
+	// Run on a backend page that is already open: loading the settings page again while its
+	// plugin gallery request is still pending stalls the web server of PKP's CI.
 	const withJournal = (callback) => {
-		cy.visit(url('management/settings/website') + '?reload=' + Date.now());
 		cy.window({timeout: 60000}).its('pkp.currentUser.csrfToken').then((token) => {
 			api('/index.php/index/api/v1/contexts?count=100').then((list) => {
 				const journal = list.items.find((item) => item.urlPath === contextPath);
