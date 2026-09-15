@@ -17,7 +17,7 @@ import('lib.pkp.classes.plugins.BlockPlugin');
 class AccessibilityBlockPlugin extends BlockPlugin {
 
 	/**
-	 * @copydoc BlockPlugin::getContents()
+	 * Render the block and queue its script.
 	 *
 	 * Blocks are loaded while the sidebar is rendered, after the page head, so
 	 * the script is queued here (scripts are printed at the end of the page) and
@@ -36,7 +36,7 @@ class AccessibilityBlockPlugin extends BlockPlugin {
 	}
 
 	/**
-	 * Install default settings on journal creation.
+	 * Default settings installed for each new journal.
 	 * @return string
 	 */
 	function getContextSpecificPluginSettingsFile() {
@@ -44,7 +44,7 @@ class AccessibilityBlockPlugin extends BlockPlugin {
 	}
 
 	/**
-	 * Get the display name of this plugin.
+	 * Name shown in the plugins list.
 	 * @return string
 	 */
 	function getDisplayName() {
@@ -52,7 +52,7 @@ class AccessibilityBlockPlugin extends BlockPlugin {
 	}
 
 	/**
-	 * Get a description of the plugin.
+	 * Description shown in the plugins list.
 	 * @return string
 	 */
 	function getDescription() {

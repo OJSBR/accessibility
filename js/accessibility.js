@@ -41,6 +41,15 @@
 		store(CONTRAST_KEY, on ? "1" : "0");
 	}
 
+	// The zoom level as the page language writes a percentage ("110%", "110 %").
+	function percent(z) {
+		try {
+			return new Intl.NumberFormat(document.documentElement.lang || undefined, {style: "percent"}).format(z / 100);
+		} catch (e) {
+			return z + "%";
+		}
+	}
+
 	function announce(msg) {
 		var el = document.querySelector(".block_accessibility .ojsbr-a11y-status");
 		if (el) { el.textContent = msg || ""; }
@@ -73,11 +82,11 @@
 			if (action === "zoom-in") {
 				z = Math.min(MAX, z + STEP);
 				applyZoom(z);
-				announce(z + "%");
+				announce(percent(z));
 			} else if (action === "zoom-out") {
 				z = Math.max(MIN, z - STEP);
 				applyZoom(z);
-				announce(z + "%");
+				announce(percent(z));
 			} else if (action === "contrast") {
 				var on = !document.documentElement.classList.contains("ojsbr-a11y-contrast");
 				applyContrast(on);
@@ -86,7 +95,7 @@
 				applyZoom(DEFAULT);
 				applyContrast(false);
 				syncContrastButtons(false);
-				announce(DEFAULT + "%");
+				announce(percent(DEFAULT));
 			}
 		}, false);
 	}

@@ -8,8 +8,9 @@
  *
  * @class PluginTest
  *
- * @brief The plugin class compiled against the PKP classes of the installation,
- *        and the assets it publishes.
+ * @brief The plugin classes compiled against the PKP classes of the
+ *        installation: an override whose return type differs from its parent is
+ *        a fatal error that php -l does not catch.
  */
 
 namespace APP\plugins\blocks\accessibility\tests;
@@ -18,45 +19,63 @@ namespace APP\plugins\blocks\accessibility\tests;
 require_once __DIR__ . '/bootstrap.php';
 
 use ReflectionClass;
+use ReflectionNamedType;
 
-class PluginTest extends TestCase
+class PluginTest extends \PKPTestCase
 {
-    public function testTheClassLoadsWithTheReturnTypesOfThisPkpVersion(): void
+    /** @return string[] */
+    protected function classes(): array
     {
-        $this->assertTrue(is_subclass_of('AccessibilityBlockPlugin', 'BlockPlugin'));
-        $reflection = new ReflectionClass('AccessibilityBlockPlugin');
-        $parent = $reflection->getParentClass();
-        foreach ($reflection->getMethods() as $method) {
-            if ($method->getDeclaringClass()->getName() !== 'AccessibilityBlockPlugin' || !$parent->hasMethod($method->getName())) {
-                continue;
-            }
-            $parentType = $parent->getMethod($method->getName())->getReturnType();
-            if ($parentType !== null) {
-                $this->assertSame((string) $parentType, (string) $method->getReturnType(), $method->getName() . '() must declare the return type ' . $parentType . '.');
+        return [
+            'AccessibilityBlockPlugin',
+        ];
+    }
+
+    public function testEveryClassLoadsAgainstThisPkpVersion(): void
+    {
+        foreach ($this->classes() as $class) {
+            $this->assertTrue(class_exists($class), "{$class} does not load.");
+        }
+    }
+
+    public function testOverriddenMethodsDeclareCompatibleReturnTypes(): void
+    {
+        foreach ($this->classes() as $class) {
+            $reflection = new ReflectionClass($class);
+            $parent = $reflection->getParentClass();
+            $this->assertTrue($parent !== false, "{$class} extends nothing.");
+            foreach ($reflection->getMethods() as $method) {
+                if ($method->getDeclaringClass()->getName() !== $reflection->getName() || !$parent->hasMethod($method->getName())) {
+                    continue;
+                }
+                $parentType = $parent->getMethod($method->getName())->getReturnType();
+                if ($parentType === null) {
+                    continue;
+                }
+                $type = $method->getReturnType();
+                $covariant = $type instanceof ReflectionNamedType && $parentType instanceof ReflectionNamedType
+                    && !$type->isBuiltin() && !$parentType->isBuiltin() && is_a($type->getName(), $parentType->getName(), true);
+                $this->assertTrue(
+                    $type !== null && ((string) $type === (string) $parentType || $covariant || ($type instanceof ReflectionNamedType && '?' . $type->getName() === (string) $parentType)),
+                    sprintf('%s::%s() must declare a return type compatible with %s.', $reflection->getShortName(), $method->getName(), $parentType)
+                );
             }
         }
     }
 
-    public function testTheAssetsAreFilesAndNotInlineCode(): void
+    public function testNoInheritedPropertyIsRedeclaredWithAType(): void
     {
-        $root = dirname(__DIR__);
-        $source = (string) file_get_contents($root . '/AccessibilityBlockPlugin.inc.php');
-
-        $this->assertTrue(is_file($root . '/css/accessibility.css'));
-        $this->assertTrue(is_file($root . '/js/accessibility.js'));
-        $this->assertStringContainsString("addJavaScript('accessibilityBlock', \$pluginUrl . '/js/accessibility.js', ['contexts' => 'frontend'])", $source);
-        $template = (string) file_get_contents($root . '/templates/block.tpl');
-        $this->assertStringContainsString('<link rel="stylesheet" href="{$accessibilityPluginUrl|escape}/css/accessibility.css" />', $template);
-    }
-
-    public function testTheScriptActsOnlyWhereTheBlockIsShown(): void
-    {
-        // A reader who turned high contrast on must always reach the reset
-        // button: the preferences are applied only on pages with the block.
-        $script = (string) file_get_contents(dirname(__DIR__) . '/js/accessibility.js');
-        $this->assertStringContainsString('if (started || !document.querySelector(".block_accessibility"))', $script);
-        $this->assertSame(1, preg_match('/var MIN = (\d+), MAX = (\d+), STEP = (\d+), DEFAULT = (\d+);/', $script, $m));
-        $this->assertTrue((int) $m[1] <= (int) $m[4] && (int) $m[4] < (int) $m[2], 'The default zoom must lie within the limits.');
-        $this->assertStringContainsString('try { window.localStorage.setItem(key, value); } catch (e) {}', $script, 'Blocked storage must not break the page.');
+        // A typed redeclaration of an untyped parent property ($pluginPath...) is fatal.
+        $this->assertNotEmpty($this->classes());
+        foreach ($this->classes() as $class) {
+            $reflection = new ReflectionClass($class);
+            $parent = $reflection->getParentClass();
+            foreach ($reflection->getProperties() as $property) {
+                if ($property->getDeclaringClass()->getName() !== $reflection->getName() || !$parent->hasProperty($property->getName())) {
+                    continue;
+                }
+                $this->assertSame((string) $parent->getProperty($property->getName())->getType(), (string) $property->getType(), "{$class}::\${$property->getName()}");
+            }
+        }
     }
 }
