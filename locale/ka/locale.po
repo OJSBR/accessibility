@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: ka\n"
+
+
+#, fuzzy
+msgid "plugins.block.accessibility.displayName"
+msgstr "ხელმისაწვდომობის ბლოკი (მასშტაბი და კონტრასტი)"
+
+#, fuzzy
+msgid "plugins.block.accessibility.description"
+msgstr "გვერდით პანელს ამატებს ბლოკს მკითხველისთვის გასადიდებელი, დასაპატარავებელი და მაღალი კონტრასტის ღილაკებით."
+
+#, fuzzy
+msgid "plugins.block.accessibility.title"
+msgstr "ხელმისაწვდომობა"
+
+#, fuzzy
+msgid "plugins.block.accessibility.zoomIn"
+msgstr "ტექსტის ზომის გაზრდა"
+
+#, fuzzy
+msgid "plugins.block.accessibility.zoomOut"
+msgstr "ტექსტის ზომის შემცირება"
+
+#, fuzzy
+msgid "plugins.block.accessibility.contrast"
+msgstr "მაღალი კონტრასტის ჩართვა/გამორთვა"
+
+#, fuzzy
+msgid "plugins.block.accessibility.reset"
+msgstr "ხელმისაწვდომობის პარამეტრების განულება"

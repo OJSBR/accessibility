@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: gl\n"
+
+
+msgid "plugins.block.accessibility.displayName"
+msgstr "Bloque de accesibilidade (zoom e contraste)"
+
+msgid "plugins.block.accessibility.description"
+msgstr "Engade na barra lateral un bloque con controis de ampliación, redución e alto contraste para o lectorado."
+
+msgid "plugins.block.accessibility.title"
+msgstr "Accesibilidade"
+
+msgid "plugins.block.accessibility.zoomIn"
+msgstr "Aumentar o tamaño do texto"
+
+msgid "plugins.block.accessibility.zoomOut"
+msgstr "Reducir o tamaño do texto"
+
+msgid "plugins.block.accessibility.contrast"
+msgstr "Alternar o alto contraste"
+
+msgid "plugins.block.accessibility.reset"
+msgstr "Restablecer a configuración de accesibilidade"

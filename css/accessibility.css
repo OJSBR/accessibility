@@ -1,0 +1,95 @@
+/**
+ * @file plugins/blocks/accessibility/css/accessibility.css
+ *
+ * Copyright (c) 2026 OJSBR (https://ojsbr.com)
+ * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
+ *
+ * Accessibility block: controls and the high-contrast mode.
+ */
+
+.block_accessibility .ojsbr-a11y-controls {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+.block_accessibility .ojsbr-a11y-btn {
+	flex: 1 1 auto;
+	min-width: 40px;
+	min-height: 40px;
+	padding: 8px 10px;
+	line-height: 1;
+	border-radius: 3px;
+	cursor: pointer;
+	text-align: center;
+}
+/* Fallback colour with zero specificity: the active theme's own button rule
+ * (.cmp_manuscript_button — same as the journal galley buttons) wins whenever
+ * it is present, so these controls always match the journal's dynamic colour. */
+:where(.block_accessibility .ojsbr-a11y-btn) {
+	background: #4b7d92;
+	color: #fff;
+	border: none;
+	font-weight: 700;
+}
+.block_accessibility .ojsbr-a11y-btn:focus-visible {
+	outline: 2px solid #1e6292;
+	outline-offset: 2px;
+}
+/* Active state (e.g. contrast turned on) uses the theme accent colour. */
+.block_accessibility .ojsbr-a11y-btn[aria-pressed="true"] {
+	background: #f7bc4a;
+	color: #111;
+}
+/* Visually-hidden live region: keeps screen-reader zoom feedback without
+ * showing the "100%" text on screen. */
+.block_accessibility .ojsbr-a11y-sr {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
+
+/* High-contrast mode (applied to the whole document) */
+html.ojsbr-a11y-contrast,
+html.ojsbr-a11y-contrast body {
+	background: #000 !important;
+	color: #fff !important;
+}
+html.ojsbr-a11y-contrast * {
+	background-color: transparent !important;
+	color: #fff !important;
+	border-color: #fff !important;
+	box-shadow: none !important;
+	text-shadow: none !important;
+}
+html.ojsbr-a11y-contrast a,
+html.ojsbr-a11y-contrast a * {
+	color: #ffff00 !important;
+	text-decoration: underline !important;
+}
+html.ojsbr-a11y-contrast a:hover,
+html.ojsbr-a11y-contrast a:focus {
+	color: #000 !important;
+	background: #ffff00 !important;
+}
+html.ojsbr-a11y-contrast input,
+html.ojsbr-a11y-contrast textarea,
+html.ojsbr-a11y-contrast select,
+html.ojsbr-a11y-contrast button {
+	background: #000 !important;
+	color: #fff !important;
+	border: 1px solid #fff !important;
+}
+html.ojsbr-a11y-contrast .block_accessibility .ojsbr-a11y-btn[aria-pressed="true"],
+html.ojsbr-a11y-contrast .block_accessibility .ojsbr-a11y-btn[aria-pressed="true"] * {
+	background: #ffff00 !important;
+	color: #000 !important;
+}
+html.ojsbr-a11y-contrast img {
+	background: #fff !important;
+}

@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: id\n"
+
+
+#, fuzzy
+msgid "plugins.block.accessibility.displayName"
+msgstr "Blok aksesibilitas (zoom & kontras)"
+
+#, fuzzy
+msgid "plugins.block.accessibility.description"
+msgstr "Menambahkan blok di bilah sisi dengan kontrol perbesar, perkecil, dan kontras tinggi untuk pembaca."
+
+#, fuzzy
+msgid "plugins.block.accessibility.title"
+msgstr "Aksesibilitas"
+
+#, fuzzy
+msgid "plugins.block.accessibility.zoomIn"
+msgstr "Perbesar ukuran teks"
+
+#, fuzzy
+msgid "plugins.block.accessibility.zoomOut"
+msgstr "Perkecil ukuran teks"
+
+#, fuzzy
+msgid "plugins.block.accessibility.contrast"
+msgstr "Alihkan kontras tinggi"
+
+#, fuzzy
+msgid "plugins.block.accessibility.reset"
+msgstr "Setel ulang pengaturan aksesibilitas"

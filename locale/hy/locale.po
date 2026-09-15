@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: hy\n"
+
+
+#, fuzzy
+msgid "plugins.block.accessibility.displayName"
+msgstr "Հասանելիության բլոկ (խոշորացում և հակադրություն)"
+
+#, fuzzy
+msgid "plugins.block.accessibility.description"
+msgstr "Կողային վահանակին ավելացնում է բլոկ՝ ընթերցողների համար խոշորացման, փոքրացման և բարձր հակադրության կառավարներով։"
+
+#, fuzzy
+msgid "plugins.block.accessibility.title"
+msgstr "Հասանելիություն"
+
+#, fuzzy
+msgid "plugins.block.accessibility.zoomIn"
+msgstr "Մեծացնել տեքստի չափը"
+
+#, fuzzy
+msgid "plugins.block.accessibility.zoomOut"
+msgstr "Փոքրացնել տեքստի չափը"
+
+#, fuzzy
+msgid "plugins.block.accessibility.contrast"
+msgstr "Միացնել/անջատել բարձր հակադրությունը"
+
+#, fuzzy
+msgid "plugins.block.accessibility.reset"
+msgstr "Վերականգնել հասանելիության կարգավորումները"

@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: ro\n"
+
+
+#, fuzzy
+msgid "plugins.block.accessibility.displayName"
+msgstr "Bloc de accesibilitate (zoom și contrast)"
+
+#, fuzzy
+msgid "plugins.block.accessibility.description"
+msgstr "Adaugă în bara laterală un bloc cu comenzi de mărire, micșorare și contrast ridicat pentru cititori."
+
+#, fuzzy
+msgid "plugins.block.accessibility.title"
+msgstr "Accesibilitate"
+
+#, fuzzy
+msgid "plugins.block.accessibility.zoomIn"
+msgstr "Mărește dimensiunea textului"
+
+#, fuzzy
+msgid "plugins.block.accessibility.zoomOut"
+msgstr "Micșorează dimensiunea textului"
+
+#, fuzzy
+msgid "plugins.block.accessibility.contrast"
+msgstr "Comută contrastul ridicat"
+
+#, fuzzy
+msgid "plugins.block.accessibility.reset"
+msgstr "Resetează setările de accesibilitate"

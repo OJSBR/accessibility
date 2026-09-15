@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: ca\n"
+
+
+msgid "plugins.block.accessibility.displayName"
+msgstr "Bloc d'accessibilitat (zoom i contrast)"
+
+msgid "plugins.block.accessibility.description"
+msgstr "Afegeix un bloc a la barra lateral amb controls d'ampliació, reducció i alt contrast per als lectors."
+
+msgid "plugins.block.accessibility.title"
+msgstr "Accessibilitat"
+
+msgid "plugins.block.accessibility.zoomIn"
+msgstr "Augmenta la mida del text"
+
+msgid "plugins.block.accessibility.zoomOut"
+msgstr "Redueix la mida del text"
+
+msgid "plugins.block.accessibility.contrast"
+msgstr "Commuta l'alt contrast"
+
+msgid "plugins.block.accessibility.reset"
+msgstr "Restableix la configuració d'accessibilitat"

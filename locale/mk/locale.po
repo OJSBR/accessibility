@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: mk\n"
+
+
+#, fuzzy
+msgid "plugins.block.accessibility.displayName"
+msgstr "Блок за пристапност (зумирање и контраст)"
+
+#, fuzzy
+msgid "plugins.block.accessibility.description"
+msgstr "Додава блок во страничната лента со контроли за зголемување, намалување и висок контраст за читателите."
+
+#, fuzzy
+msgid "plugins.block.accessibility.title"
+msgstr "Пристапност"
+
+#, fuzzy
+msgid "plugins.block.accessibility.zoomIn"
+msgstr "Зголеми ја големината на текстот"
+
+#, fuzzy
+msgid "plugins.block.accessibility.zoomOut"
+msgstr "Намали ја големината на текстот"
+
+#, fuzzy
+msgid "plugins.block.accessibility.contrast"
+msgstr "Вклучи/исклучи висок контраст"
+
+#, fuzzy
+msgid "plugins.block.accessibility.reset"
+msgstr "Ресетирај ги поставките за пристапност"
