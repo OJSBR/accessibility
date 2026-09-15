@@ -1,10 +1,10 @@
 # Accessibility Block (Zoom & Contrast) — OJS plugin
 
 [![OJS](https://img.shields.io/badge/OJS-3.3%20%7C%203.4%20%7C%203.5-brightgreen)](https://pkp.sfu.ca/ojs/)
-[![Version](https://img.shields.io/badge/version-1.0.2.0-blue)](version.xml)
+[![Version](https://img.shields.io/badge/version-1.0.2.1-blue)](version.xml)
 [![License](https://img.shields.io/badge/license-GPL--3.0-lightgrey)](LICENSE)
 
-**⬇️ Install package:** [OJS 3.5](https://github.com/OJSBR/accessibility/releases/download/1.0.2.0/accessibility-1.0.2.0.tar.gz) · [OJS 3.4](https://github.com/OJSBR/accessibility/releases/download/1.0.2.0-ojs3.4/accessibility-1.0.2.0-ojs3.4.tar.gz) · [OJS 3.3](https://github.com/OJSBR/accessibility/releases/download/1.0.2.0-ojs3.3/accessibility-1.0.2.0-ojs3.3.tar.gz) — or browse all [Releases](../../releases).
+**⬇️ Install package:** [OJS 3.5](https://github.com/OJSBR/accessibility/releases/download/1.0.2.1/accessibility-1.0.2.1.tar.gz) · [OJS 3.4](https://github.com/OJSBR/accessibility/releases/download/1.0.2.1-ojs3.4/accessibility-1.0.2.1-ojs3.4.tar.gz) · [OJS 3.3](https://github.com/OJSBR/accessibility/releases/download/1.0.2.1-ojs3.3/accessibility-1.0.2.1-ojs3.3.tar.gz) — or browse all [Releases](../../releases).
 
 A **block plugin** for **Open Journal Systems (OJS)** that adds a sidebar widget with
 **reader accessibility controls**: **zoom in (A+)**, **zoom out (A−)**, a **high-contrast**
@@ -18,9 +18,9 @@ that **persist across pages**.
 
 | OJS version | Branch | Plugin release |
 |-------------|--------|----------------|
-| OJS 3.5.x   | [`stable-3_5_0`](../../tree/stable-3_5_0) *(default)* | 1.0.2.0 |
-| OJS 3.4.x   | [`stable-3_4_0`](../../tree/stable-3_4_0) | 1.0.2.0 |
-| OJS 3.3.x   | [`stable-3_3_0`](../../tree/stable-3_3_0) | 1.0.2.0 |
+| OJS 3.5.x   | [`stable-3_5_0`](../../tree/stable-3_5_0) *(default)* | 1.0.2.1 |
+| OJS 3.4.x   | [`stable-3_4_0`](../../tree/stable-3_4_0) | 1.0.2.1 |
+| OJS 3.3.x   | [`stable-3_3_0`](../../tree/stable-3_3_0) | 1.0.2.1 |
 
 The three branches behave the same. The locale folders follow each OJS line: OJS 3.5 uses the
 short codes (`fr`, `pt`, `nb_NO`, `sr_Latn`, `zh_Hans`), OJS 3.4 the codes `fr_FR`, `pt_PT`, `nb`,
@@ -74,40 +74,43 @@ reader on their own.
 - The control buttons carry the active theme's button class, so they inherit the journal's
   dynamic colour. A **zero-specificity `:where()` fallback** provides a sensible colour on
   themes that don't define that class, keeping the plugin portable.
+- The class is `AccessibilityBlockPlugin`, loaded through `index.php` like PKP's own `browse` block; the
+  name is kept because renaming it would reset the plugin's settings and its place in the sidebar.
 - No core files are touched and no database schema is added, so it is fully
   upgrade-compatible; disabling the plugin removes the block entirely.
 
 ## Tests
 
-- **PHP suite** (`tests/`, 17 tests): the plugin class against the installed PKP, the assets
-  being files and not inline code, the script acting only where the block is shown, the
-  template (escaped attributes, an accessible name on every control, no hard-coded text) and
-  the translations (identical keys, fuzzy markers). Run either way from the OJS root:
+- **PHPUnit** (`tests/*Test.php`, on PKP's `PKPTestCase`): the plugin class against the installed
+  PKP, the script queued for reader pages only, a template without inline scripts or styles, the
+  zoom level announced in the page language, escaped attributes, and the translations. From the
+  OJS root:
 
   ```bash
-  php plugins/blocks/accessibility/tests/run.php
   lib/pkp/lib/vendor/bin/phpunit --configuration lib/pkp/tests/phpunit.xml --no-coverage "$PWD/plugins/blocks/accessibility/tests"
   ```
 
   (On OJS 3.3 the PHPUnit configuration is `lib/pkp/tests/phpunit-env1.xml`.)
 
-- **Cypress** (`cypress/tests/functional/AccessibilityBlock.cy.js`): what a reader gets — four
-  labelled controls, the assets loaded once, zoom within its limits, high contrast and zoom
-  kept on the next page, reset. No login, nothing changed on the server; the block must be in
-  the sidebar.
+- **Cypress** (`cypress/tests/functional/AccessibilityBlock.cy.js`, run by
+  [pkp-github-actions](https://github.com/pkp/pkp-github-actions) on every push): enables the
+  plugin and places the block in the sidebar when needed (restoring the sidebar afterwards), then
+  checks what a reader gets — four labelled controls, the assets loaded once, zoom within its
+  limits, high contrast and zoom kept on the next page, and reset.
+- Verified on OJS 3.5.0.3, 3.4.0.10 and 3.3.0.22.
 
-  ```bash
-  npx cypress run --config specPattern='plugins/blocks/accessibility/cypress/tests/functional/*.cy.js' \
-    --env contextPath=<journal>,pagePath=<page>,otherPagePath=<another page>
-  ```
-
-- Verified on OJS 3.5.0.3, 3.4.0.10 and 3.3.0.22, with screenshots of the block in normal and
-  high-contrast mode.
+Tests are kept in the repository and are not part of the release package.
 
 ## Credits & authorship
 
 - **Developed and maintained by** [OJSBR](https://ojsbr.com) — original plugin.
 - Distributed under the **GNU GPL v3**.
+
+## AI use
+
+Generative AI (Claude, by Anthropic) was used to write and run tests, improve the code and bring
+it in line with PKP standards. Every change is reviewed and tested by OJSBR, which is responsible
+for the published releases.
 
 ## Contributing
 
@@ -134,9 +137,9 @@ dependências externas, e com as preferências **persistindo entre as páginas**
 
 | Versão do OJS | Branch | Release do plugin |
 |---------------|--------|-------------------|
-| OJS 3.5.x     | [`stable-3_5_0`](../../tree/stable-3_5_0) *(padrão)* | 1.0.2.0 |
-| OJS 3.4.x     | [`stable-3_4_0`](../../tree/stable-3_4_0) | 1.0.2.0 |
-| OJS 3.3.x     | [`stable-3_3_0`](../../tree/stable-3_3_0) | 1.0.2.0 |
+| OJS 3.5.x     | [`stable-3_5_0`](../../tree/stable-3_5_0) *(padrão)* | 1.0.2.1 |
+| OJS 3.4.x     | [`stable-3_4_0`](../../tree/stable-3_4_0) | 1.0.2.1 |
+| OJS 3.3.x     | [`stable-3_3_0`](../../tree/stable-3_3_0) | 1.0.2.1 |
 
 As três branches se comportam igual. As pastas de idioma seguem cada linha do OJS: o 3.5 usa os
 códigos curtos (`fr`, `pt`, `nb_NO`, `sr_Latn`, `zh_Hans`), o 3.4 os códigos `fr_FR`, `pt_PT`,
@@ -187,22 +190,31 @@ bom lugar para os controles de acessibilidade).
 - Os botões recebem a classe de botão do tema ativo, herdando a cor dinâmica da revista. Um
   **fallback de especificidade zero (`:where()`)** garante uma cor sensata em temas que não
   definam essa classe, mantendo o plugin portável.
+- A classe é `AccessibilityBlockPlugin`, carregada pelo `index.php` como o bloco `browse` da própria PKP;
+  o nome fica porque renomear apagaria a configuração do plugin e a posição dele na barra lateral.
 - Nenhum arquivo do núcleo é alterado e nenhum schema de banco é adicionado — é totalmente
   compatível com upgrades; desativar o plugin remove o bloco por completo.
 
 ### Testes
 
-Suíte PHP em `tests/` (17 testes, pelo `tests/run.php` ou pelo PHPUnit do PKP — no OJS 3.3 com
-`lib/pkp/tests/phpunit-env1.xml`) e Cypress em `cypress/tests/functional/`, com os comandos da
-seção em inglês. O Cypress confere o que o leitor recebe: quatro controles com nome acessível,
-arquivos carregados uma vez, zoom dentro dos limites, contraste e zoom mantidos na página
-seguinte e redefinir — sem login e sem mudar nada no servidor. Verificado no OJS 3.5.0.3,
-3.4.0.10 e 3.3.0.22, com capturas do bloco em modo normal e em alto contraste.
+PHPUnit em `tests/*Test.php`, sobre o `PKPTestCase` do PKP (no OJS 3.3 com
+`lib/pkp/tests/phpunit-env1.xml`), e Cypress em `cypress/tests/functional/`, rodado pelo
+[pkp-github-actions](https://github.com/pkp/pkp-github-actions) a cada push: liga o plugin e põe o
+bloco na barra lateral quando preciso (devolvendo a barra lateral como estava) e confere o que o
+leitor recebe — quatro controles com nome acessível, arquivos carregados uma vez, zoom dentro dos
+limites, contraste e zoom mantidos na página seguinte e redefinir. Verificado no OJS 3.5.0.3,
+3.4.0.10 e 3.3.0.22. Os testes ficam no repositório e não vão no pacote de release.
 
 ### Créditos e autoria
 
 - **Desenvolvido e mantido pela** [OJSBR](https://ojsbr.com) — plugin autoral.
 - Distribuído sob a **GNU GPL v3**.
+
+### Uso de IA
+
+Foi usada IA generativa (Claude, da Anthropic) para escrever e rodar testes, melhorar o código e
+alinhá-lo aos padrões da PKP. Toda mudança é revisada e testada pela OJSBR, que responde pelas
+releases publicadas.
 
 ### Licença
 
