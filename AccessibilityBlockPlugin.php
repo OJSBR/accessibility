@@ -13,10 +13,31 @@
 
 namespace APP\plugins\blocks\accessibility;
 
+use APP\core\Application;
 use PKP\plugins\BlockPlugin;
 
 class AccessibilityBlockPlugin extends BlockPlugin
 {
+    /**
+     * @copydoc BlockPlugin::getContents()
+     *
+     * Blocks are loaded while the sidebar is rendered, after the page head, so
+     * the script is queued here (scripts are printed at the end of the page) and
+     * the stylesheet is linked from the block itself.
+     *
+     * @param null|mixed $request
+     */
+    public function getContents($templateMgr, $request = null)
+    {
+        $request ??= Application::get()->getRequest();
+        $pluginUrl = $request->getBaseUrl() . '/' . $this->getPluginPath();
+
+        $templateMgr->addJavaScript('accessibilityBlock', $pluginUrl . '/js/accessibility.js', ['contexts' => 'frontend']);
+        $templateMgr->assign('accessibilityPluginUrl', $pluginUrl);
+
+        return parent::getContents($templateMgr, $request);
+    }
+
     /**
      * Install default settings on journal creation.
      *
