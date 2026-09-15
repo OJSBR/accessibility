@@ -19,7 +19,7 @@ use PKP\plugins\BlockPlugin;
 class AccessibilityBlockPlugin extends BlockPlugin
 {
     /**
-     * @copydoc BlockPlugin::getContents()
+     * Render the block and queue its script.
      *
      * Blocks are loaded while the sidebar is rendered, after the page head, so
      * the script is queued here (scripts are printed at the end of the page) and
@@ -27,7 +27,7 @@ class AccessibilityBlockPlugin extends BlockPlugin
      *
      * @param null|mixed $request
      */
-    public function getContents($templateMgr, $request = null)
+    public function getContents($templateMgr, $request = null): string
     {
         $request ??= Application::get()->getRequest();
         $pluginUrl = $request->getBaseUrl() . '/' . $this->getPluginPath();
@@ -39,31 +39,25 @@ class AccessibilityBlockPlugin extends BlockPlugin
     }
 
     /**
-     * Install default settings on journal creation.
-     *
-     * @return string
+     * Default settings installed for each new journal.
      */
-    public function getContextSpecificPluginSettingsFile()
+    public function getContextSpecificPluginSettingsFile(): string
     {
         return $this->getPluginPath() . '/settings.xml';
     }
 
     /**
-     * Get the display name of this plugin.
-     *
-     * @return string
+     * Name shown in the plugins list.
      */
-    public function getDisplayName()
+    public function getDisplayName(): string
     {
         return __('plugins.block.accessibility.displayName');
     }
 
     /**
-     * Get a description of the plugin.
-     *
-     * @return string
+     * Description shown in the plugins list.
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return __('plugins.block.accessibility.description');
     }
