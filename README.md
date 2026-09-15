@@ -93,7 +93,9 @@ reader on their own.
   (On OJS 3.3 the PHPUnit configuration is `lib/pkp/tests/phpunit-env1.xml`.)
 
 - **Cypress** (`cypress/tests/functional/AccessibilityBlock.cy.js`, run by
-  [pkp-github-actions](https://github.com/pkp/pkp-github-actions) on every push): enables the
+  [pkp-github-actions](https://github.com/pkp/pkp-github-actions) on every push to the OJS 3.4 and
+  3.5 branches; PKP's CI no longer starts OJS 3.3 on current runners, so on 3.3 it is run on an
+  installation): enables the
   plugin and places the block in the sidebar when needed (restoring the sidebar afterwards), then
   checks what a reader gets — four labelled controls, the assets loaded once, zoom within its
   limits, high contrast and zoom kept on the next page, and reset.
@@ -199,7 +201,9 @@ bom lugar para os controles de acessibilidade).
 
 PHPUnit em `tests/*Test.php`, sobre o `PKPTestCase` do PKP (no OJS 3.3 com
 `lib/pkp/tests/phpunit-env1.xml`), e Cypress em `cypress/tests/functional/`, rodado pelo
-[pkp-github-actions](https://github.com/pkp/pkp-github-actions) a cada push: liga o plugin e põe o
+[pkp-github-actions](https://github.com/pkp/pkp-github-actions) a cada push nas branches do OJS 3.4 e
+3.5 (o CI da PKP não sobe mais o OJS 3.3 nos runners atuais; no 3.3 ele roda numa instalação): liga o
+plugin e põe o
 bloco na barra lateral quando preciso (devolvendo a barra lateral como estava) e confere o que o
 leitor recebe — quatro controles com nome acessível, arquivos carregados uma vez, zoom dentro dos
 limites, contraste e zoom mantidos na página seguinte e redefinir. Verificado no OJS 3.5.0.3,
